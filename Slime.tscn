@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Slime.gd" type="Script" id=1]
+[ext_resource path="res://slime01-Sheet-Sheet.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.07243
+height = 11.6831
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 58, 105 )
+rotation = 1.55864
+shape = SubResource( 1 )
+
+[node name="LedgeCheckLeft" type="RayCast2D" parent="."]
+position = Vector2( 71, 106 )
+enabled = true
+cast_to = Vector2( 0, 16 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 57, 96 )
+scale = Vector2( 0.545216, 0.48374 )
+frames = SubResource( 7 )
+frame = 2
+playing = true
+
+[node name="LedgeCheckRight" type="RayCast2D" parent="."]
+position = Vector2( 46, 106 )
+enabled = true
+cast_to = Vector2( 0, 16 )
