@@ -18,6 +18,6 @@ func _process(delta):
 		set_playing(false)
 		set_animation('Walking')
 		set_frame(0)
-		print("frame 0")\
+		print("frame 0")
 		
 		

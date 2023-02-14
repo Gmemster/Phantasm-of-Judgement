@@ -18,7 +18,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 	if Input.is_action_just_pressed("ui_jump") and is_on_floor():
-		velocity.y -= 200
+		velocity.y -= 250
 		print('jump')
 	velocity.y += gravity
 	move_and_slide(velocity)
