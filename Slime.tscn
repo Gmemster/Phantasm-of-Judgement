@@ -45,19 +45,18 @@ rotation = 1.55864
 shape = SubResource( 1 )
 script = ExtResource( 3 )
 
-[node name="LedgeCheckLeft" type="RayCast2D" parent="."]
-position = Vector2( 71, 106 )
-enabled = true
-cast_to = Vector2( 0, 16 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 57, 96 )
+position = Vector2( 58, 96 )
 scale = Vector2( 0.545216, 0.48374 )
 frames = SubResource( 7 )
-frame = 3
 playing = true
 
 [node name="LedgeCheckRight" type="RayCast2D" parent="."]
-position = Vector2( 46, 106 )
+position = Vector2( 52, 106 )
+enabled = true
+cast_to = Vector2( 0, 16 )
+
+[node name="LedgeCheckLeft" type="RayCast2D" parent="."]
+position = Vector2( 64, 106 )
 enabled = true
 cast_to = Vector2( 0, 16 )

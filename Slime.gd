@@ -14,6 +14,10 @@ func _physics_process(delta):
 	
 	if found_wall or found_ledge:
 		direction *= -1
+	else:
+		direction *= 1
+		
+		
 	
 	velocity = direction * 25
 	move_and_slide(velocity, Vector2.UP)

@@ -23,8 +23,17 @@ func _physics_process(delta):
 	velocity.y += gravity
 	move_and_slide(velocity)
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	
 	pass
 
+
+
+func _process(delta):
+	if Tree.AnimatedSprite.animation == ('Attack') and AnimatedSprite.get_frame == (11):
+		Tree.Attack.Disable(false)
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
